@@ -15,7 +15,7 @@ function renderMarkdown(text: string): string {
       // Bullet list items
       .replace(/^[-*]\s+(.+)$/gm, "<li>$1</li>")
       // Wrap consecutive <li> in <ul>
-      .replace(/(<li>.*?<\/li>\n?)+/gs, (match) => `<ul class="list-disc pl-4 space-y-1">${match}</ul>`)
+      .replace(/(<li>.*?<\/li>\n?)+/g, (match) => `<ul class="list-disc pl-4 space-y-1">${match}</ul>`)
       // Line breaks
       .replace(/\n\n/g, "</p><p>")
       .replace(/\n/g, "<br/>")
